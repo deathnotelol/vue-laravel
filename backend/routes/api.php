@@ -22,8 +22,19 @@ Route::get('/categories', [CategoryController::class,'index']);
 //get all recipes
 Route::get('/recipes', [RecipesController::class,'index']);
 
+//store and recipes
+Route::post('/recipes', [RecipesController::class,'store']);
+
+
 //get single recipes
 Route::get('/recipes/{recipe}', [RecipesController::class, 'show']);
 
+//update recipes route
+Route::patch('/recipes/{recipe}', [RecipesController::class, 'update']);
+
 //delete single recipes
 Route::delete('/recipes/{recipe}', [RecipesController::class, 'destroy']);
+
+//upload image api
+Route::post('/recipes/upload', [RecipesController::class,'upload']);
+
