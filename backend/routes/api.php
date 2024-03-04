@@ -30,7 +30,7 @@ Route::post('/recipes', [RecipesController::class,'store']);
 Route::get('/recipes/{recipe}', [RecipesController::class, 'show']);
 
 //update recipes route
-Route::patch('/recipes/{recipe}', [RecipesController::class, 'update']);
+Route::put('/recipes/{recipe}', [RecipesController::class, 'update']);
 
 //delete single recipes
 Route::delete('/recipes/{recipe}', [RecipesController::class, 'destroy']);

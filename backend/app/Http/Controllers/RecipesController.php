@@ -20,7 +20,7 @@ class RecipesController extends Controller
     public function index()
     {
         try {
-            return Recipes::filter(request(['category']))->paginate(6);
+            return Recipes::filter(request(['category']))->orderBy('created_at', 'desc')->paginate(6);
         } catch (Exception $e) {
             return response()->json([
                 'message' => $e->getMessage(),

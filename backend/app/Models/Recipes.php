@@ -16,7 +16,7 @@ class Recipes extends Model
 
     public function scopeFilter($query, $filters) 
     {
-      if(isset($filters['category'])) {
+      if(isset($filters['category']) && $filters['category'] !== 'all') {
         $query->whereHas('category', function($catQuery) use ($filters) {
             $catQuery->where('name', $filters['category']);
         });
